@@ -1,5 +1,4 @@
 import java.util.*;
-import java.arraylist.*;
 import java.io.*;
 
 public class Project_juan_lopez {
@@ -43,7 +42,6 @@ public class Project_juan_lopez {
             height = Float.parseFloat(sc.nextLine());
             weight = Float.parseFloat(sc.nextLine());
 
-            //System.out.print("\n");
             sc.nextLine();
             policyList.add(new Policy(pNum, pName, phFirstName, phLastName, phAge, phSmoking, height, weight));
         } //End while
@@ -58,34 +56,3 @@ public class Project_juan_lopez {
         
     }//End Main
 }//End Class
-
-
-
-/**
- * 
- * 
-Policy Number: 1234
-
-Provider Name: State Farm
-
-Policyholder’s First Name: John
-
-Policyholder’s Last Name: Doe
-
-Policyholder’s Age: 24
-
-Policyholder’s Smoking Status (smoker/non-smoker): non-smoker
-
-Policyholder’s Height (in inches): 62.0
-
-Policyholder’s Weight (in pounds): 250.5
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- */
