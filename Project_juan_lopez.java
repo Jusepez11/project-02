@@ -1,9 +1,13 @@
 import java.util.*;
+
+import javax.sql.PooledConnection;
+
 import java.io.*;
 
 public class Project_juan_lopez {
     public static void main(String[] args) throws IOException{
         //declaring objects
+        Policy policy = new Policy();
         File f = new File("PolicyInformation.txt");
         Scanner sc = new Scanner(f);
         
@@ -25,6 +29,11 @@ public class Project_juan_lopez {
         ArrayList<Policy> policyList = new ArrayList<>();
 
         while (sc.hasNextLine()) {
+
+            /**
+             * @param
+             * saving the info from the txt file into varibles to then save it into an array
+             */
             pNum = Integer.parseInt(sc.nextLine());
             pName = sc.nextLine();
             phFirstName = sc.nextLine();
@@ -41,9 +50,19 @@ public class Project_juan_lopez {
 
             height = Float.parseFloat(sc.nextLine());
             weight = Float.parseFloat(sc.nextLine());
-
-            sc.nextLine();
-            policyList.add(new Policy(pNum, pName, phFirstName, phLastName, phAge, phSmoking, height, weight));
+            if (sc.hasNextLine())
+                {
+                    sc.nextLine();
+                }
+            policy.setPolicyNumber(pNum);
+            policy.setProviderName(pName);
+            policy.setPolicyHolderFirstName(phFirstName);
+            policy.setPolicyHolderLastName(phLastName);
+            policy.setPolicyHolderAge(phAge);
+            policy.setPolicyHolderSmokingStatus(phSmoking);
+            policy.setPolicyHolderHeight(height);
+            policy.setPolicyHolderWeight(weight);
+            policyList.add(policy);
         } //End while
 
         sc.close();
@@ -52,7 +71,7 @@ public class Project_juan_lopez {
             p.Display();
             System.out.println("");
         }
-        System.out.printf("\n\nThe number of policies with a smoker is:%s\nThe number of policies with a non-smoker is:%s", smoker, nonSmoker);
+        System.out.printf("\nThe number of policies with a smoker is:%s\nThe number of policies with a non-smoker is:%s", smoker, nonSmoker);
         
     }//End Main
 }//End Class
